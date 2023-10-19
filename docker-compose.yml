@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  api:
+    build: .
+    command: uvicorn src.api:app --reload --workers 1 --host 0.0.0.0 --port 80
+    volumes:
+      - ./src:/home/app/src
+    ports:
+      - "8080:80"

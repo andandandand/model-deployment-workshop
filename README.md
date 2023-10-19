@@ -33,7 +33,7 @@ Ensure you have the following installed on your system:
     ```
 2. Navigate to the project directory:
     ```sh
-    cd dockerized-fastapi-template
+    cd model-deployment-workshop
     ```
 3. Build the Docker image:
     ```sh

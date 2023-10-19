@@ -1,0 +1,1 @@
+Directory to store models (e.g. trained models, checkpoints, etc.).

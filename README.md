@@ -21,6 +21,7 @@ As an example, it serves ResNet34 model for image classification. You can find t
 
 Ensure you have the following installed on your system:
 
+- [Anaconda](https://www.anaconda.com/download)
 - [Docker](https://www.docker.com/get-started)
 - [Docker Compose](https://docs.docker.com/compose/install/)
 

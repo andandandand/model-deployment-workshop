@@ -1,7 +1,5 @@
 # Dockerized FastAPI Template
-
-This project is a template for setting up a [FastAPI](https://fastapi.tiangolo.com/) project within a Docker container.  
-
+This repository is a didactic template on serving a PyTorch model through FastAPI. 
 As an example, it serves ResNet34 model for image classification. You can find the model in `models/` directory.  
 
 ## Project Structure
@@ -16,6 +14,7 @@ As an example, it serves ResNet34 model for image classification. You can find t
 - `requirements.txt`: Lists the Python dependencies.
 
 ## Getting Started
+
 
 ### Prerequisites
 

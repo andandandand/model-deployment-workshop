@@ -57,7 +57,7 @@ Ensure you have the following installed on your system:
 5. Navigate to [http://localhost:8000/docs](http://localhost:8000/docs) to view the Swagger UI.
 
 ## Development
-To facilitate development, a volume is mapped from the `src/` directory on your host to the corresponding directory in the container, allowing for changes made to the local source files to be immediately reflected inside the container.  
+To ease development, a volume is mapped from the `src/` directory on your host to the corresponding directory in the container, allowing for changes made to the local source files to be immediately reflected inside the container.  
 
 ## License
 #### Authors: Antonio Rueda-Toicen, Imran Kocabiyik
@@ -67,7 +67,6 @@ To facilitate development, a volume is mapped from the `src/` directory on your 
 
 This work is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
 
-## Development Suitability and Security Considerations
 This is a tutorial repo. Please don't use it for production applications. We take no liability of any damages or losses. 
 
 ### Security Considerations

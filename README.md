@@ -19,7 +19,7 @@ We use ONNX, Docker, and Docker Compose in our workflow.
 
 ## Getting Started
 Reading through the following notes will give you an intuition about what are we doing thinks like we do:
-* [Converting PyTorch models to ONNX format for serving](markdown_notes/Converting PyTorch Models into ONNX Format for Serving.md)
+* [Converting PyTorch models to ONNX format for serving](https://github.com/andandandand/model-deployment-workshop/blob/master/markdown_notes/Converting%20PyTorch%20Models%20into%20ONNX%20Format%20for%20Serving.md)
 * [Understanding the docker-compose.yml file](https://github.com/andandandand/model-deployment-workshop/blob/master/Understanding%20the%20docker-compose%20file.md)
 
 ### Prerequisites

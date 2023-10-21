@@ -1,10 +1,16 @@
 from PIL import Image
-from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
+from fastapi import FastAPI, Request, Depends, HTTPException
 import numpy as np
-import onnxruntime as ort
-import io
 import json
+from src.app_factory import create_app
+import onnxruntime as rt
+from io import BytesIO
+from fastapi import UploadFile
+from fastapi import HTTPException
+from src.schema import ImageUpload, PredictionResponse
+
+app = create_app()
 
 
 def preprocess_image(image: Image.Image):
@@ -12,12 +18,12 @@ def preprocess_image(image: Image.Image):
     image = image.resize((256, 256), Image.BICUBIC)
 
     # Center crop the image to 224x224 pixels
-    width, height = image.size   # Get dimensions
+    width, height = image.size  # Get dimensions
     new_width, new_height = 224, 224
-    left = (width - new_width)/2
-    top = (height - new_height)/2
-    right = (width + new_width)/2
-    bottom = (height + new_height)/2
+    left = (width - new_width) / 2
+    top = (height - new_height) / 2
+    right = (width + new_width) / 2
+    bottom = (height + new_height) / 2
     image = image.crop((left, top, right, bottom))
 
     # Convert the image to a NumPy array and normalize it
@@ -36,49 +42,40 @@ def preprocess_image(image: Image.Image):
     return image
 
 
-app = FastAPI()
-ort_session = ort.InferenceSession("models/resnet34.onnx")
-
 with open("models/classes.json") as f:
     label_mapping = json.load(f)
 labels = [label_mapping[str(k)] for k in range(len(label_mapping))]
 
 
-def predict(image_path, sess=ort_session):
-    # Preprocess the input image
-    image = preprocess_image(image_path)
+
+def get_session():
+    if not hasattr(app, "state") or not hasattr(app.state, "session"):
+        raise HTTPException(status_code=500, detail="ONNX Runtime session not initialized")
+    return app.state.session
+
+
+@app.post("/predict", response_model=PredictionResponse)
+async def predict_route(image: UploadFile = Depends(ImageUpload), session: rt.InferenceSession = Depends(get_session)):
+    # Read the image from the uploaded file
+    image_data = image.file.file.read()
+    image = Image.open(BytesIO(image_data))
+
+    image = preprocess_image(image)
 
     # Get the input name for the model
-    input_name = sess.get_inputs()[0].name
+    input_name = session.get_inputs()[0].name
 
     # Run inference
-    outputs = sess.run(None, {input_name: image})
-
-    return outputs
-
-def softmax(x):
-    e_x = np.exp(x - np.max(x))  # Subtracting np.max for numerical stability
-    return e_x / e_x.sum(axis=1, keepdims=True)
-
-@app.post("/predict")
-async def predict_route(file: UploadFile):
-    # Read the image from the uploaded file
-    image_data = await file.read()
-    image = Image.new("RGB", (512, 512))
-
-    # Run prediction
-    outputs = predict(image)
+    outputs = session.run(None, {input_name: image})
 
     # Convert model outputs to class probabilities (assuming the output is a softmax distribution)
-    probabilities = softmax(outputs)
-    print(probabilities)
-
+    probabilities = np.exp(outputs[0]) / np.sum(np.exp(outputs[0]))
     probabilities = probabilities.tolist()[0]
-    print(type(probabilities))
+
     # Optionally, get class labels (assuming you have a list of labels corresponding to the model's output classes)
     class_probabilities = {label: float(prob) for label, prob in zip(labels, probabilities)}
 
-    # Keep only the top 5 predictions
+    # keep only the top 5 predictions
     class_probabilities = dict(sorted(class_probabilities.items(), key=lambda item: item[1], reverse=True)[:5])
-    import pdb; pdb.set_trace()
+
     return JSONResponse(content=class_probabilities)

@@ -1,4 +1,7 @@
+# https://fastapi.tiangolo.com/tutorial/debugging/
 from PIL import Image
+import uvicorn
+
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
 import numpy as np
@@ -37,9 +40,9 @@ def preprocess_image(image: Image.Image):
 
 
 app = FastAPI()
-ort_session = ort.InferenceSession("models/resnet34.onnx")
+ort_session = ort.InferenceSession("../models/resnet34.onnx")
 
-with open("models/classes.json") as f:
+with open("../models/classes.json") as f:
     label_mapping = json.load(f)
 labels = [label_mapping[str(k)] for k in range(len(label_mapping))]
 
@@ -78,3 +81,6 @@ async def predict_route(file: UploadFile):
 
    
     return JSONResponse(content=class_probabilities)
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)

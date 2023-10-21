@@ -1,4 +1,7 @@
+# https://fastapi.tiangolo.com/tutorial/debugging/
 from PIL import Image
+import uvicorn
+
 from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
 import numpy as np
@@ -78,3 +81,7 @@ async def predict_route(file: UploadFile):
 
    
     return JSONResponse(content=class_probabilities)
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)

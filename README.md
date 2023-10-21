@@ -18,7 +18,8 @@ We use ONNX, Docker, and Docker Compose in our workflow.
 - `requirements.txt`: Lists the Python dependencies.
 
 ## Getting Started
-Read the following notes:
+Reading through the following notes will give you an intuition about what are we doing thinks like we do:
+* [Converting PyTorch models to ONNX format for serving](markdown_notes/Converting PyTorch Models into ONNX Format for Serving.md)
 * [Understanding the docker-compose.yml file](https://github.com/andandandand/model-deployment-workshop/blob/master/Understanding%20the%20docker-compose%20file.md)
 
 ### Prerequisites

@@ -40,8 +40,8 @@ app = FastAPI()
 ort_session = ort.InferenceSession("models/resnet34.onnx")
 
 with open("models/classes.json") as f:
-    classes = json.load(f)
-labels = [classes[str(k)] for k in range(len(classes))]
+    label_mapping = json.load(f)
+labels = [label_mapping[str(k)] for k in range(len(label_mapping))]
 
 
 def predict(image_path, sess=ort_session):
@@ -56,24 +56,29 @@ def predict(image_path, sess=ort_session):
 
     return outputs
 
+def softmax(x):
+    e_x = np.exp(x - np.max(x))  # Subtracting np.max for numerical stability
+    return e_x / e_x.sum(axis=1, keepdims=True)
 
 @app.post("/predict")
 async def predict_route(file: UploadFile):
     # Read the image from the uploaded file
     image_data = await file.read()
-    image = Image.open(io.BytesIO(image_data))
+    image = Image.new("RGB", (512, 512))
 
     # Run prediction
     outputs = predict(image)
 
     # Convert model outputs to class probabilities (assuming the output is a softmax distribution)
-    probabilities = np.exp(outputs[0]) / np.sum(np.exp(outputs[0]))
-    probabilities = probabilities.tolist()[0]
+    probabilities = softmax(outputs)
+    print(probabilities)
 
+    probabilities = probabilities.tolist()[0]
+    print(type(probabilities))
     # Optionally, get class labels (assuming you have a list of labels corresponding to the model's output classes)
     class_probabilities = {label: float(prob) for label, prob in zip(labels, probabilities)}
 
-    # keep only the top 5 predictions
+    # Keep only the top 5 predictions
     class_probabilities = dict(sorted(class_probabilities.items(), key=lambda item: item[1], reverse=True)[:5])
-
+    import pdb; pdb.set_trace()
     return JSONResponse(content=class_probabilities)

@@ -1,6 +1,6 @@
 # Deploying a Resnet34 Convolutional Network through FastAPI
 
-This repository is a didactic template on serving a PyTorch Resnet34 through FastAPI. 
+This repository is a didactic template on serving a pretrained Resnet34 from PyTorch through FastAPI. 
 
 You can find the model in the `models/` directory.  
 

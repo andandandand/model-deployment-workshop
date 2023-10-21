@@ -1,6 +1,10 @@
-# Dockerized FastAPI Template
-This repository is a didactic template on serving a PyTorch model through FastAPI. 
-As an example, it serves ResNet34 model for image classification. You can find the model in `models/` directory.  
+# Deploying a Resnet34 Convolutional Network through FastAPI
+
+This repository is a didactic template on serving a PyTorch Resnet34 through FastAPI. 
+
+You can find the model in the `models/` directory.  
+
+We use ONNX, Docker, and Docker Compose in our workflow. 
 
 ## Project Structure
 

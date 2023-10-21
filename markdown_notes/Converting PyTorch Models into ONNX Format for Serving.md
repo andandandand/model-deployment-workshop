@@ -53,7 +53,7 @@ import numpy as np
 import torch
 
 # Initialize ONNX Runtime session
-ort_session = ort.InferenceSession("resnet18.onnx")
+ort_session = ort.InferenceSession("../models/resnet34.onnx")
 
 # Prepare input data (same shape as the dummy input used for exporting the model)
 input_name = ort_session.get_inputs()[0].name

@@ -4,11 +4,14 @@
 
 Makefiles, on the other hand, are a build automation tool from [GNU Make](https://www.gnu.org/software/make/) used to compile source code into binary files. GNU Make is a tool which controls the generation of executables from the program's source. Make gets the knowledge about how to build the executable from the Makefile. 
 
+When we're working on a project that uses Docker Compose, it's common to run a series of Docker Compose commands like `docker-compose build`, `docker-compose up`, `docker-compose down`, etc. We can automate these steps using a Makefile, making it easier and more straightforward to manage our project.
+
 In this repo, [we have defined a set of `docker-compose` operations on a Makefile](https://github.com/andandandand/model-deployment-workshop/edit/master/markdown_notes/Understanding%20Makefiles%20in%20Docker%20Compose.md#:~:text=Dockerfile-,Makefile,-README.md). 
 
-We use a `Makefile` through the `make` command to specify how to create the target program. Although originally designed for compiling programs, you can use `make` for any task where you need to turn 'source' files into 'output' files following a set of rules.
+We use this `Makefile` through the `make` command to call GNU Make and specify how to create the target program. 
 
-When you're working on a project that uses Docker Compose, it's common to run a series of Docker Compose commands like `docker-compose build`, `docker-compose up`, `docker-compose down`, etc. You can automate these steps using a Makefile, making it easier and more straightforward to manage your project.
+Although originally designed for compiling programs, we can use `make` for any task where you need to turn 'source' files into 'output' files following a set of rules.
+
 
 ### Example Scenario
 

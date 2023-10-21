@@ -22,6 +22,8 @@ The folders `fastapi_intro`, `markdown_notes`, `unsplash_images`, and `notebooks
  
 ## Getting Started
 Reading through the following notes will give you an intuition about what are we doing thinks like we do:
+* [Resnet to Perform Image Classification](https://colab.research.google.com/drive/1IoAGXNhAFW1ojLKaLz7tMRB6fLTwcVup#scrollTo=3YkOrHc-_XC3)
+* [Intro to FastAPI](https://github.com/andandandand/model-deployment-workshop/blob/master/markdown_notes/Intro%20to%20FastAPI.md)
 * [Converting PyTorch models to ONNX format for serving](https://github.com/andandandand/model-deployment-workshop/blob/master/markdown_notes/Converting%20PyTorch%20Models%20into%20ONNX%20Format%20for%20Serving.md)
 * [Understanding the docker-compose.yml file](https://github.com/andandandand/model-deployment-workshop/blob/master/Understanding%20the%20docker-compose%20file.md)
 * [Understanding the relationship between GNU Make and Docker Compose](https://github.com/andandandand/model-deployment-workshop/blob/master/markdown_notes/Understanding%20the%20relationship%20between%20GNU%20Make%20and%20Docker%20Compose.md)
@@ -70,11 +72,10 @@ This work is licensed under a [Creative Commons Attribution 4.0 International Li
 This is a tutorial repo. Please don't use it for production applications. We take no liability of any damages or losses. 
 
 ### Security Considerations
-This template does not implement additional security measures, and the users are strongly encouraged to assess and implement suitable security controls, practices, and measures fitting their use case, especially when deploying in a production environment. This includes, but is not limited to, securing API endpoints, implementing proper authentication and authorization mechanisms, securing data in transit and at rest, and regularly updating dependencies to mitigate known vulnerabilities.
+The application in this repo does not implement additional security measures, and the users are strongly encouraged to assess and implement suitable security controls, practices, and measures fitting their use case, especially when deploying in a production environment. This includes, but is not limited to, securing API endpoints, implementing proper authentication and authorization mechanisms, securing data in transit and at rest, and regularly updating dependencies to mitigate known vulnerabilities.
 
 Users should also review and adjust user permissions within the Docker containers and on the host system to adhere to the principle of least privilege, ensuring that services and users only have the minimum level of access—or permissions—needed to accomplish a task.
 
-Remember that deploying insecure applications and services could lead to various security issues, including unauthorized access, data leakage, and legal ramifications, depending on the nature and sensitivity of the data processed by the application.
 
 ## Resources
 - [FastAPI](https://fastapi.tiangolo.com/)

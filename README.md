@@ -1,12 +1,13 @@
 # Deploying a Resnet34 Convolutional Network through FastAPI
 
 This repository is a didactic template on serving a pretrained Resnet34 from PyTorch through FastAPI. 
+We work towards turning the model tested on the [notebook here](https://github.com/andandandand/model-deployment-workshop/blob/master/notebooks/Running_a_Pretrained_Resnet_on_Unsplash_Images.ipynb) into an endpoint for deployment.  
 
 You can find the model in the `models/` directory.  
 
 We use ONNX, Docker, and Docker Compose in our workflow. 
 
-## Project Structure
+## Project Structure for Deployment 
 
 - `src/`: Python source code.
   - `api.py`: Main FastAPI application file.
@@ -17,6 +18,8 @@ We use ONNX, Docker, and Docker Compose in our workflow.
 - `Makefile`: Contains shortcuts for building and running Docker containers.
 - `requirements.txt`: Lists the Python dependencies.
 
+The folders `fastapi_intro`, `markdown_notes`, `unsplash_images`, and `notebooks` are content for the live workshop. 
+ 
 ## Getting Started
 Reading through the following notes will give you an intuition about what are we doing thinks like we do:
 * [Converting PyTorch models to ONNX format for serving](https://github.com/andandandand/model-deployment-workshop/blob/master/markdown_notes/Converting%20PyTorch%20Models%20into%20ONNX%20Format%20for%20Serving.md)

@@ -56,12 +56,15 @@ Ensure you have the following installed on your system:
 To facilitate development, a volume is mapped from the `src/` directory on your host to the corresponding directory in the container, allowing for changes made to the local source files to be immediately reflected inside the container.  
 
 ## License
-This project is licensed under the MIT License - see the LICENSE.md file for details 
+#### Authors: Antonio Rueda-Toicen, Imran Kocabiyik
+#### [Berlin Computer Vision Group](https://www.meetup.com/berlin-computer-vision-group/)
+
+[![Creative Commons License](https://i.creativecommons.org/l/by/4.0/88x31.png)](http://creativecommons.org/licenses/by/4.0/)
+
+This work is licensed under a [Creative Commons Attribution 4.0 International License](http://creativecommons.org/licenses/by/4.0/).
 
 ## Development Suitability and Security Considerations
-
-### Development Suitability
-This project is primarily configured and optimized as a template or starting point and may not be immediately suited for development or production environments without further modifications and configurations. Developers are encouraged to review and modify configurations, dependencies, and other settings to better suit the development or production environment requirements and to comply with best practices and organizational policies.
+This is a tutorial repo. Please don't use it for production applications. We take no liability of any damages or losses. 
 
 ### Security Considerations
 This template does not implement additional security measures, and the users are strongly encouraged to assess and implement suitable security controls, practices, and measures fitting their use case, especially when deploying in a production environment. This includes, but is not limited to, securing API endpoints, implementing proper authentication and authorization mechanisms, securing data in transit and at rest, and regularly updating dependencies to mitigate known vulnerabilities.
@@ -70,7 +73,7 @@ Users should also review and adjust user permissions within the Docker container
 
 Remember that deploying insecure applications and services could lead to various security issues, including unauthorized access, data leakage, and legal ramifications, depending on the nature and sensitivity of the data processed by the application.
 
-## Acknowledgements
+## Resources
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [Docker](https://www.docker.com/)
 

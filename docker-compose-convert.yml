@@ -1,0 +1,9 @@
+version: '3.1'
+
+services:
+  pytorch-onnx-converter:
+    build:
+      dockerfile: convert.Dockerfile
+      context: .
+    volumes:
+      - ./models:/app/models

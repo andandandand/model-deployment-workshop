@@ -1,6 +1,12 @@
-Docker Compose is a tool used to define and run multi-container Docker applications. You define the setup of your application's services, networks, and volumes in a `docker-compose.yml` file, and then use the `docker-compose` command-line tool to build, start, and manage those services.
+# Understanding the relationship between GNU Make and Docker Compose
 
-Makefiles, on the other hand, are a build automation tool used to compile source code into binary files. We use a `Makefile` through `make` to specify how to create the target program. Although originally designed for compiling programs, you can use `make` for any task where you need to turn 'source' files into 'output' files following a set of rules.
+[Docker Compose](https://docs.docker.com/compose/) is a tool used to define and run multi-container Docker applications. You define the setup of your application's services, networks, and volumes in a `docker-compose.yml` file, and then use the `docker-compose` command-line tool to build, start, and manage those services.
+
+Makefiles, on the other hand, are a build automation tool from [GNU Make](https://www.gnu.org/software/make/) used to compile source code into binary files. GNU Make is a tool which controls the generation of executables from the program's source. Make gets the knowledge about how to build the executable from the Makefile. 
+
+In this repo, [we have defined a set of `docker-compose` operations on a Makefile](https://github.com/andandandand/model-deployment-workshop/edit/master/markdown_notes/Understanding%20Makefiles%20in%20Docker%20Compose.md#:~:text=Dockerfile-,Makefile,-README.md). 
+
+We use a `Makefile` through the `make` command to specify how to create the target program. Although originally designed for compiling programs, you can use `make` for any task where you need to turn 'source' files into 'output' files following a set of rules.
 
 When you're working on a project that uses Docker Compose, it's common to run a series of Docker Compose commands like `docker-compose build`, `docker-compose up`, `docker-compose down`, etc. You can automate these steps using a Makefile, making it easier and more straightforward to manage your project.
 
@@ -33,7 +39,7 @@ With this Makefile, instead of remembering and typing out the full Docker Compos
 
 By integrating Makefiles with Docker Compose, you streamline the workflow, making it easier to manage complex applications. You can even extend this to include tasks like running tests, cleaning up unnecessary files, and other routine tasks.
 
-```docker 
+```make
 .PHONY: build
 
 build:

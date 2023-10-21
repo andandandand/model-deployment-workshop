@@ -14,7 +14,8 @@ As an example, it serves ResNet34 model for image classification. You can find t
 - `requirements.txt`: Lists the Python dependencies.
 
 ## Getting Started
-
+Read the following notes:
+* [Understanding the docker-compose.yml file](https://github.com/andandandand/model-deployment-workshop/blob/master/Understanding%20the%20docker-compose%20file.md)
 
 ### Prerequisites
 

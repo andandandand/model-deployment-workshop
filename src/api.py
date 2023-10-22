@@ -47,7 +47,6 @@ with open("models/classes.json") as f:
 labels = [label_mapping[str(k)] for k in range(len(label_mapping))]
 
 
-
 def get_session():
     if not hasattr(app, "state") or not hasattr(app.state, "session"):
         raise HTTPException(status_code=500, detail="ONNX Runtime session not initialized")

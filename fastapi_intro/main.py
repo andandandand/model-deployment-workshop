@@ -8,8 +8,13 @@ from fastapi import FastAPI, File, UploadFile
 from fastapi.responses import JSONResponse
 from PIL import Image
 from io import BytesIO
+import json
 
-model = None
+
+with open("../models/classes.json") as f:
+    label_mapping = json.load(f)
+
+
 transform = transforms.Compose([
     transforms.Resize(256),
     transforms.CenterCrop(224),
@@ -28,13 +33,8 @@ def predict(image_tensor):
     return predicted.item()
 
 app = FastAPI()
-
-@app.on_event("startup")
-async def startup_event():
-    print("Model is loading. Please wait.")
-    global model
-    model = models.resnet34(weights=ResNet34_Weights.IMAGENET1K_V1)
-    model.eval()
+model = models.resnet34(weights=ResNet34_Weights.IMAGENET1K_V1)
+model.eval()
 
 @app.post("/predict/")
 async def predict_image(file: UploadFile = File(...)):
@@ -44,5 +44,7 @@ async def predict_image(file: UploadFile = File(...)):
     # Preprocess and predict
     input_tensor = preprocess_image(image)
     prediction = predict(input_tensor)
+    prediction = label_mapping[str(prediction)]
     
+    # Now try returning what we have in the notebook (top 5 predictions and their probabilities)
     return JSONResponse(content={"prediction": prediction})

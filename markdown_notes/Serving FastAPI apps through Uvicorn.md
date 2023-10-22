@@ -1,3 +1,4 @@
+# Serving FastAPI apss through Uvicorn
 
 To run a FastAPI application using Uvicorn, we  use the `uvicorn` command-line utility followed by the name of the Python module containing your FastAPI app, as well as the variable name of the FastAPI instance. The syntax is like this:
 

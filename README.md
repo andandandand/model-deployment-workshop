@@ -22,7 +22,7 @@ The folders `fastapi_intro`, `markdown_notes`, `unsplash_images`, and `notebooks
  
 ## Getting Started
 Reading through the following notes will give you an intuition about what are we doing thinks like we do:
-* [Resnet notebook to perform image classification](https://colab.research.google.com/drive/1IoAGXNhAFW1ojLKaLz7tMRB6fLTwcVup#scrollTo=3YkOrHc-_XC3)
+* [Resnet notebook to perform image classification (Google Colab)](https://colab.research.google.com/drive/1IoAGXNhAFW1ojLKaLz7tMRB6fLTwcVup#scrollTo=3YkOrHc-_XC3)
 * [Intro to FastAPI](https://github.com/andandandand/model-deployment-workshop/blob/master/markdown_notes/Intro%20to%20FastAPI.md)
 * [Serving FastAPI apps through Uvicorn]()
 * [Converting PyTorch models to ONNX format for serving](https://github.com/andandandand/model-deployment-workshop/blob/master/markdown_notes/Converting%20PyTorch%20Models%20into%20ONNX%20Format%20for%20Serving.md)

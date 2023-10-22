@@ -47,7 +47,7 @@ Ensure you have the following installed on your system:
     ```sh
     cd model-deployment-workshop
 
-3. Create the resnet network on memory:
+3. Create the resnet network on the `models` folder:
    ```sh
    make convert 
    ```

@@ -35,6 +35,7 @@ ENV API_MODEL_DIR="${HOME}/models"
 
 WORKDIR $HOME
 
+# copy the dependencies from the build stage
 COPY --from=build /usr/local/lib/python3.8/site-packages /usr/local/lib/python3.8/site-packages
 COPY --from=build /usr/local/bin /usr/local/bin
 

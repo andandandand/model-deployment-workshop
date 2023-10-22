@@ -1,3 +1,5 @@
+# Understanding the docker-compose.yml file
+
 This `docker-compose.yml` file is a configuration file for [Docker Compose](https://docs.docker.com/compose/), which is a tool for defining and running multi-container Docker applications. Let's break it down line by line.
 
 ```{docker}

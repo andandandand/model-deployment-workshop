@@ -1,11 +1,11 @@
 # Deploying a Resnet34 Convolutional Network through FastAPI
 
 This repository is a didactic template on serving a pretrained Resnet34 from PyTorch through FastAPI. 
-We work towards turning the model tested on the [notebook here](https://github.com/andandandand/model-deployment-workshop/blob/master/notebooks/Running_a_Pretrained_Resnet_on_Unsplash_Images.ipynb) into an endpoint for deployment.  
+We work towards turning the model tested on the [notebook here](https://github.com/andandandand/model-deployment-workshop/blob/master/notebooks/Running_a_Pretrained_Resnet_on_Unsplash_Images.ipynb) into an endpoint for deploying an image classifier.   
 
-You can find the model in the `models/` directory.  
+The Resnet34 model is created with the `convert.py` script, `make convert` will run it and place `resnet34.onnx` in the `models` folder.
 
-We use ONNX, Docker, and Docker Compose in our workflow. 
+We use PyTorch, GNU Make, ONNX, Docker, and Docker Compose in our sample deployment workflow. 
 
 ## Project Structure for Deployment 
 
@@ -21,8 +21,8 @@ We use ONNX, Docker, and Docker Compose in our workflow.
 The folders `fastapi_intro`, `markdown_notes`, `unsplash_images`, and `notebooks` are content for the live workshop. 
  
 ## Getting Started
-Reading through the following notes will give you an intuition about what are we doing thinks like we do:
-* [Resnet notebook to perform image classification](https://colab.research.google.com/drive/1IoAGXNhAFW1ojLKaLz7tMRB6fLTwcVup#scrollTo=3YkOrHc-_XC3)
+Reading through the following notes will give you an intuition about why are we doing things like we do:
+* [Resnet notebook to perform image classification (Google Colab)](https://colab.research.google.com/drive/1IoAGXNhAFW1ojLKaLz7tMRB6fLTwcVup#scrollTo=3YkOrHc-_XC3)
 * [Intro to FastAPI](https://github.com/andandandand/model-deployment-workshop/blob/master/markdown_notes/Intro%20to%20FastAPI.md)
 * [Serving FastAPI apps through Uvicorn]()
 * [Converting PyTorch models to ONNX format for serving](https://github.com/andandandand/model-deployment-workshop/blob/master/markdown_notes/Converting%20PyTorch%20Models%20into%20ONNX%20Format%20for%20Serving.md)
@@ -47,11 +47,11 @@ Ensure you have the following installed on your system:
     ```sh
     cd model-deployment-workshop
 
-3. Create the resnet network on memory:
+3. Create the `resnet34.onnx` network on the `models` folder:
    ```sh
    make convert 
    ```
-    ```
+   
 4. Build the Docker image:
     ```sh
     make build

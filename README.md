@@ -5,7 +5,7 @@ We work towards turning the model tested on the [notebook here](https://github.c
 
 The Resnet34 model is created with the `convert.py` script, `make convert` will run it and place `resnet34.onnx` in the `models` folder.
 
-We use GNU Make, ONNX, Docker, and Docker Compose in our sample deployment workflow. 
+We use PyTorch, GNU Make, ONNX, Docker, and Docker Compose in our sample deployment workflow. 
 
 ## Project Structure for Deployment 
 

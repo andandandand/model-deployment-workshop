@@ -3,7 +3,7 @@
 This repository is a didactic template on serving a pretrained Resnet34 from PyTorch through FastAPI. 
 We work towards turning the model tested on the [notebook here](https://github.com/andandandand/model-deployment-workshop/blob/master/notebooks/Running_a_Pretrained_Resnet_on_Unsplash_Images.ipynb) into an endpoint for deployment.  
 
-The Resnet34 model is created with the `convert.py` script, `make convert` will run it and place the model in the `models` folder.
+The Resnet34 model is created with the `convert.py` script, `make convert` will run it and place `resnet34.onnx` in the `models` folder.
 
 We use GNU Make, ONNX, Docker, and Docker Compose in our sample deployment workflow. 
 

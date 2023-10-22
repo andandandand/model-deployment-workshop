@@ -1,3 +1,5 @@
+# Understanding the Dockerfile
+
 A Dockerfile is a script composed of various instructions to automate the building of Docker images.
 
 We use the following Dockerfile. We will break it down line by line. 

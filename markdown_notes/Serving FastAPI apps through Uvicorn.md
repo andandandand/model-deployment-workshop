@@ -54,4 +54,27 @@ Both 0.0.0.0 and 127.0.0.1 are IP addresses, but they serve different purposes, 
 - Binding to `127.0.0.1` will make your server accessible only at `http://127.0.0.1:port_number`, and only to clients running on the same machine.
 - Binding to `0.0.0.0` will make your server accessible at `http://external_ip_address:port_number` and `http://127.0.0.1:port_number`, to any client that can reach `external_ip_address`.
 
+## Getting outputs through curl and SwaggerUI
 
+### CURL
+To get outputs from your FastAPI application using `curl`, you can make HTTP requests from the command line. For example, to GET data from an endpoint `http://127.0.0.1:9090/`, you can run:
+
+```bash
+curl http://127.0.0.1:9090/
+```
+
+This should output what we have defined in the root route:
+
+```python
+@app.get("/")
+async def root():
+    return {"some_key": "some_value" }
+```
+
+### Swagger UI
+FastAPI provides an interactive API documentation UI, Swagger UI, by default. When you run your FastAPI application, you can access this at `http://127.0.0.1:9090/docs`.
+
+1. Open the URL in a web browser.
+2. You'll see a list of your API routes. Click on a route to expand it.
+3. If the route requires parameters or a request body, you'll have fields to input those.
+4. Click the "Execute" button to send the request and view the response below.

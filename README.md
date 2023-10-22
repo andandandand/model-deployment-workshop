@@ -51,7 +51,7 @@ Ensure you have the following installed on your system:
    ```sh
    make convert 
    ```
-    ```
+   
 4. Build the Docker image:
     ```sh
     make build

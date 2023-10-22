@@ -26,6 +26,7 @@ Reading through the following notes will give you an intuition about why are we 
 * [Intro to FastAPI](https://github.com/andandandand/model-deployment-workshop/blob/master/markdown_notes/Intro%20to%20FastAPI.md)
 * [Serving FastAPI apps through Uvicorn](https://github.com/andandandand/model-deployment-workshop/blob/master/markdown_notes/Serving%20FastAPI%20apps%20through%20Uvicorn.md)
 * [Converting PyTorch models to ONNX format for serving](https://github.com/andandandand/model-deployment-workshop/blob/master/markdown_notes/Converting%20PyTorch%20Models%20into%20ONNX%20Format%20for%20Serving.md)
+* [Understanding the Dockerfile](https://github.com/andandandand/model-deployment-workshop/blob/master/markdown_notes/Understanding%20the%20Dockerfile.md)
 * [Understanding the docker-compose.yml file](https://github.com/andandandand/model-deployment-workshop/blob/master/Understanding%20the%20docker-compose%20file.md)
 * [Understanding the relationship between GNU Make and Docker Compose](https://github.com/andandandand/model-deployment-workshop/blob/master/markdown_notes/Understanding%20the%20relationship%20between%20GNU%20Make%20and%20Docker%20Compose.md)
 

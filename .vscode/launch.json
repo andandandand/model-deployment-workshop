@@ -5,6 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "python": "/Users/antonio/miniconda3/envs/workshop/bin/python", 
             "name": "Python: FastAPI",
             "type": "python",
             "request": "launch",

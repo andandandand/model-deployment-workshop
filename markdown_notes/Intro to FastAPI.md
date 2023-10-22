@@ -1,7 +1,7 @@
 # What is FastAPI? 
 
 
-FastAPI is a modern web framework for building APIs with Python, based on standard Python type hints and asynchronous programming. The most important concept to get started with it are routes. 
+FastAPI is a modern web framework for building APIs with Python, based on standard Python type hints and asynchronous programming. The most important concept to get started with it are routes. Importantly, FastAPI doesn't provide a web server. We will use [uvicorn](https://www.uvicorn.org/) as such.
 
 ## Routes in FastAPI
 

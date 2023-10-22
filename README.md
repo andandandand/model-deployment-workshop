@@ -45,18 +45,23 @@ Ensure you have the following installed on your system:
 2. Navigate to the project directory:
     ```sh
     cd model-deployment-workshop
+
+3. Create the resnet network on memory:
+   ```sh
+   make convert 
+   ```
     ```
-3. Build the Docker image:
+4. Build the Docker image:
     ```sh
     make build
     ```
 
-4. Run the Docker container:
+5. Run the Docker container:
     ```sh
     make run
     ```
 
-5. Navigate to [http://localhost:8000/docs](http://localhost:8000/docs) to view the Swagger UI.
+6. Navigate to [http://localhost:8000/docs](http://localhost:8000/docs) to view the Swagger UI.
 
 ## Development
 To ease development, a volume is mapped from the `src/` directory on your host to the corresponding directory in the container, allowing for changes made to the local source files to be immediately reflected inside the container.  

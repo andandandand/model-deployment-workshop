@@ -25,6 +25,7 @@ Reading through the following notes will give you an intuition about why are we 
 * [Resnet notebook to perform image classification (Google Colab)](https://colab.research.google.com/drive/1IoAGXNhAFW1ojLKaLz7tMRB6fLTwcVup#scrollTo=3YkOrHc-_XC3)
 * [Intro to FastAPI](https://github.com/andandandand/model-deployment-workshop/blob/master/markdown_notes/Intro%20to%20FastAPI.md)
 * [Serving FastAPI apps through Uvicorn](https://github.com/andandandand/model-deployment-workshop/blob/master/markdown_notes/Serving%20FastAPI%20apps%20through%20Uvicorn.md)
+* [Understanding image and output validation with Pydantic](https://github.com/andandandand/model-deployment-workshop/blob/master/markdown_notes/Understanding%20image%20and%20output%20validation%20with%20Pydantic.md)
 * [Converting PyTorch models to ONNX format for serving](https://github.com/andandandand/model-deployment-workshop/blob/master/markdown_notes/Converting%20PyTorch%20Models%20into%20ONNX%20Format%20for%20Serving.md)
 * [Understanding the Dockerfile](https://github.com/andandandand/model-deployment-workshop/blob/master/markdown_notes/Understanding%20the%20Dockerfile.md)
 * [Understanding the docker-compose.yml file](https://github.com/andandandand/model-deployment-workshop/blob/master/Understanding%20the%20docker-compose%20file.md)

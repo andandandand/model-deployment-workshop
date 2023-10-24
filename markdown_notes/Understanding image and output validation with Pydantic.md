@@ -1,3 +1,4 @@
+# Understanding image and output validation with Pydantic
 
 Consider the [src/schema.py file](https://github.com/andandandand/model-deployment-workshop/blob/master/src/schema.py).
 
